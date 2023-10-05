@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Hover to Edit Profile Pic</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <style>
+    .user-sidebar {
+  width: 30vw;
+  height: 100vh;
+
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  background-color: var(--white2);
+}
+        .image-upload {
+            height: 170px;
+            width: 170px;
+            border-radius: 50%;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+            margin: 100px auto 0px auto;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .image-upload input[type="file"] {
+            display: none;
+        }
+
+        .image-upload label{
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: var(--white);
+      
+      }
+            .image-upload img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+             }
+    </style>
+
+</head>
+
+<body>
+    <div id="<%= dom_id personal_detail %>">
+        <p>
+            <strong>Mobile:</strong>
+            <%= personal_detail.mobile %>
+        </p>
+
+        <p>
+            <strong>Email:</strong>
+            <%= personal_detail.email %>
+        </p>
+
+        <p>
+            <strong>Gender:</strong>
+            <%= personal_detail.gender %>
+        </p>
+
+        <p>
+            <strong>Dob:</strong>
+            <%= personal_detail.dob %>
+        </p>
+
+        <p>
+            <strong>Marital status:</strong>
+            <%= personal_detail.marital_status %>
+        </p>
+
+        <p>
+            <strong>Blood group:</strong>
+            <%= personal_detail.blood_group %>
+        </p>
+
+        <div class="user-sidebar ">
+        <div class="image-upload">
+            <input id="file-input" type="file" />
+            <label for="file-input">
+                <%= image_tag(personal_detail.image, class: "img-fluid") %>
+                <i class="fa fa-camera"></i> <!-- Add camera icon here -->
+            </label>
+        </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
